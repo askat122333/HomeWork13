@@ -40,8 +40,6 @@ public abstract class  Locality {
             if (localities1[i].getSupervisor().equals(name)) {
                 System.out.println(localities1[i].toString());
                  break;
-            }else {
-                System.out.println("нет таких руководителей");
             }
         }
     }
