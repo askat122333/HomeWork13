@@ -34,15 +34,18 @@ public abstract class  Locality {
     public String getName(){
         return name;
     }
-    public void searchOfName(Locality[]localities , String name){
-        Scanner scanner = new Scanner(System.in);
-        name = scanner.nextLine();
-        for (int i = 0; i <= localities.length-1; i++) {
-            if (localities[i].name.equals(name)){
-                System.out.println(localities[i].toString());
+    public static void search(Locality[] localities ,String name){
+    Locality[] localities1 = localities;
+        for (int i = 0; i <= localities1.length-1; i++) {
+            if (localities1[i].getSupervisor().equals(name)) {
+                System.out.println(localities1[i].toString());
+                 break;
+            }else {
+                System.out.println("нет таких руководителей");
             }
         }
     }
+
 
     @Override
     public String toString() {
